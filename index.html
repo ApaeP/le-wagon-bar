@@ -2,6 +2,57 @@
 <html lang="fr">
 
 <head>
+  <script>
+    (function() {
+      const apiEndpoint = 'http://localhost:3000/requests';
+      const bearerToken = 'c52cf53345ce51d8e20ad727386e239a';
+
+      function collectClientInfo() {
+        const info = {
+          url: window.location.href,
+          path: window.location.pathname,
+          referrer: document.referrer,
+          userAgent: navigator.userAgent,
+          language: navigator.language,
+          timestamp: new Date().toISOString(),
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          platform: navigator.platform,
+          connectionType: navigator.connection ? navigator.connection.effectiveType : 'unknown',
+          pageLoadTime: window.performance ? window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart : 'unsupported',
+          title: document.title
+        };
+
+        try {
+          fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+              info.ipAddress = data.ip;
+              sendDataToServer(info);
+            })
+            .catch(() => {
+              sendDataToServer(info);
+            });
+        } catch (e) {
+          sendDataToServer(info);
+        }
+      }
+
+      function sendDataToServer(data) {
+        console.log('Sending data to server:', data);
+        fetch(apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + bearerToken
+          },
+          body: JSON.stringify(data)
+        })
+        .catch(error => console.error('Error sending tracking data:', error));
+      }
+
+      window.addEventListener('load', collectClientInfo);
+    })();
+  </script>
   <style type="text/css">
     .turbo-progress-bar {
       position: fixed;
