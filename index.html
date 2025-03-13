@@ -9,10 +9,10 @@
 
       function collectClientInfo() {
         const info = {
-          url: window.location.href,
+          domain: window.location.href,
           path: window.location.pathname,
           referrer: document.referrer,
-          userAgent: navigator.userAgent,
+          user_agent: navigator.userAgent,
           language: navigator.language,
           timestamp: new Date().toISOString(),
           timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
@@ -45,7 +45,7 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + bearerToken
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify({ "request": data})
         })
         .catch(error => console.error('Error sending tracking data:', error));
       }
