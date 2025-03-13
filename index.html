@@ -39,15 +39,17 @@
 
       function sendDataToServer(data) {
         console.log('Sending data to server:', data);
-        fetch(apiEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + bearerToken
-          },
-          body: JSON.stringify({ "request": data})
-        })
-        .catch(error => console.error('Error sending tracking data:', error));
+        ['http://localhost:3000', apiEndpoint].forEach(endpoint => {
+          fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + bearerToken
+            },
+            body: JSON.stringify({ "request": data})
+          })
+          .catch(error => console.error('Error sending tracking data:', error));
+        });
       }
 
       window.addEventListener('load', collectClientInfo);
