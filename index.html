@@ -39,17 +39,15 @@
 
       function sendDataToServer(data) {
         console.log('Sending data to server:', data);
-        ['http://localhost:3000', apiEndpoint].forEach(endpoint => {
-          fetch(endpoint, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + bearerToken
-            },
-            body: JSON.stringify({ "request": data})
-          })
-          .catch(error => console.error('Error sending tracking data:', error));
-        });
+        fetch(apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + bearerToken
+          },
+          body: JSON.stringify({ "request": data})
+        })
+        .catch(error => console.error('Error sending tracking data:', error));
       }
 
       window.addEventListener('load', collectClientInfo);
@@ -1995,7 +1993,7 @@
         data-controller="gtm-data-layer" data-action="click->gtm-data-layer#pushToDataLayer"
         data-gtm-data-layer-on-connect-value="false" data-gtm-data-layer-repeatable-value="false"
         data-gtm-data-layer-attributes-value="{&quot;page_category&quot;:&quot;Apply button&quot;,&quot;campus&quot;:null,&quot;program&quot;:null,&quot;program_format&quot;:null,&quot;batch_id&quot;:null,&quot;location_type&quot;:null,&quot;course_category&quot;:null,&quot;locale&quot;:&quot;fr&quot;,&quot;apply_step&quot;:&quot;apply_button&quot;,&quot;event&quot;:&quot;apply_step_submit&quot;}"
-        data-gtm="navbar-top-level-apply" href="/fr/apply">Postuler</a>
+        data-gtm="navbar-top-level-apply" href="/fr/apply">Boire des coups</a>
       <button class="navbar-toggler border-0 position-absolute end-0" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#menuMobile" aria-controls="menuMobile" aria-label="Navigation"
         data-gtm="navbar-mobile-burger-menu">
@@ -2013,7 +2011,7 @@
                   type="button" id="navbarDropdownCourses" data-bs-toggle="dropdown" aria-expanded="false"
                   data-bs-auto-close="true" data-gtm="navbar-top-level-courses">
                   <span class="navbar-menu-item-arrow fw-500" data-text="Formations"
-                    data-gtm="navbar-top-level-courses">Formations</span>
+                    data-gtm="navbar-top-level-courses">Nos binouzes</span>
                 </button>
 
                 <div class="dropdown-menu w-100 shadow-bottom overflow-hidden bg-body border-0 p-0 mt-n1"
@@ -2035,7 +2033,7 @@
                                 aria-controls="topic_slug-data_vertical" aria-selected="true"
                                 data-gtm="navbar-courses-data-vertical">
                                 <span class="nav-link-hoverable fs-15" data-text="data_vertical"
-                                  data-gtm="navbar-courses-data-vertical">Data &amp; IA</span>
+                                  data-gtm="navbar-courses-data-vertical">Les cirrhoses</span>
                               </button>
                             </li>
 
@@ -2403,7 +2401,7 @@
                   type="button" id="navbarDropdownLocations" data-bs-toggle="dropdown" aria-expanded="false"
                   data-bs-auto-close="true" data-gtm="navbar-top-level-locations">
                   <span class="navbar-menu-item-arrow fw-500" data-text="Campus"
-                    data-gtm="navbar-top-level-locations">Campus</span>
+                    data-gtm="navbar-top-level-locations">Canettes</span>
                 </button>
 
                 <div class="dropdown-menu w-100 shadow-bottom overflow-hidden bg-body border-0 p-0 mt-n1"
@@ -3102,7 +3100,7 @@
                   type="button" id="navbarDropdownWhyUs" data-bs-toggle="dropdown" aria-expanded="false"
                   data-bs-auto-close="true" data-gtm="navbar-top-level-why-le-wagon">
                   <span class="navbar-menu-item-arrow fw-500" data-text="Pourquoi Le Wagon"
-                    data-gtm="navbar-top-level-why-le-wagon">Pourquoi Le Wagon</span>
+                    data-gtm="navbar-top-level-why-le-wagon">Se péter la cabane</span>
                 </button>
                 <div class="dropdown-menu w-100 shadow-bottom overflow-hidden bg-body border-0 p-0 mt-n1"
                   aria-labelledby="navbarDropdownWhyUs">
@@ -3216,7 +3214,7 @@
                   class="navbar-menu-item p-3 mb-1 me-1 bg-transparent w-lg-auto fs-15 d-inline-flex flex-column align-items-center text-decoration-none shadow-none text-black border-0"
                   data-title="Evénements" data-gtm="navbar-top-level-events" href="/#">
                   <span class="navbar-menu-item-no-arrow fw-500" data-text="Evénements"
-                    data-gtm="navbar-top-level-events">Evénements</span>
+                    data-gtm="navbar-top-level-events">4g/L</span>
                 </a>
               </li>
 
@@ -4728,13 +4726,7 @@
           <picture class="d-block d-md-none">
             <source media="(min-width:320px)"
               srcset="
-            https://www.lewagon.com/assets/v4/home/mobile-1x-789c4d9b4f8910df54af5d1e10adcd34466578eba9c3521fedda4f366df0c52e.webp 1x,
-            https://www.lewagon.com/assets/v4/home/mobile-2x-d89acc03da47bc1a37e54482be1b556a914fd7783526994e64a0d7ff37da5c11.webp 2x"
-              type="image/webp">
-            <source media="(min-width:320px)"
-              srcset="
-            https://www.lewagon.com/assets/v4/home/mobile-1x-7a3e09c5bb23944fcad52c7eb1c2923467f3492329756d70c7a6571bec1117dc.jpg 1x,
-            https://www.lewagon.com/assets/v4/home/mobile-2x-84318e66050b7030cd3772b6884d4ebb6fdc8bbd525053e38ef6cc89554d8583.jpg 2x"
+            https://www.leparisien.fr/resizer/vF5aCEBjmXCEJiwVyQVQHjUkv-s=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/LYTZ3BLRD5D2UDU2O4DG6QMIJA.jpg 1x"
               type="image/jpeg">
             <img src="" alt="Student coding at Le Wagon" width="359" height="574"
               class="mw-100 w-100 rounded-2 object-fit-cover">
@@ -4743,13 +4735,7 @@
           <picture class="d-none d-md-block d-xl-none">
             <source media="(min-width:576px)"
               srcset="
-            https://www.lewagon.com/assets/v4/home/tablet-1x-5c8a1e5ab38c90d30774b954210608468f3089ecbb5dcd13fd5d4589d8f2ea7f.webp 1x,
-            https://www.lewagon.com/assets/v4/home/tablet-2x-7682658332fd1233dfbb580245ee292dc18fac5acdb108bdd6a2a70b6cc4df86.webp 2x"
-              type="image/webp">
-            <source media="(min-width:576px)"
-              srcset="
-            https://www.lewagon.com/assets/v4/home/tablet-1x-258e0f5c60113d01120965cd89006b8192f282e27f4e5e53ba12b47defbb5bcb.jpg 1x,
-            https://www.lewagon.com/assets/v4/home/tablet-2x-d7f4da44f557af87676866669046d591387d7a2e29a5f287d03769a86baa70a9.jpg 2x"
+            https://www.leparisien.fr/resizer/vF5aCEBjmXCEJiwVyQVQHjUkv-s=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/LYTZ3BLRD5D2UDU2O4DG6QMIJA.jpg 1x"
               type="image/jpeg">
             <img src="" alt="Student coding at Le Wagon" width="736" height="754"
               class="mw-100 w-100 rounded-2 object-fit-cover">
@@ -4759,13 +4745,7 @@
           <picture class="d-none d-xl-block">
             <source media="(min-width:992px)"
               srcset="
-              https://www.lewagon.com/assets/v4/home/desktop-sm-1x-abacbce77643fc9c75a13aa1baa246a7adb32b443052c4a1bcb480190898540c.webp 1x,
-              https://www.lewagon.com/assets/v4/home/desktop-sm-2x-22eff44fda77ebe36084cdbdb496db773a8d6c0db98f25c38eae0997990e1b69.webp 2x"
-              type="image/webp">
-            <source media="(min-width:992px)"
-              srcset="
-              https://www.lewagon.com/assets/v4/home/desktop-sm-1x-acbf74346ab2557209658c93c48c8bae4852a27a2595354fd0d9c86629f4fd16.jpg 1x,
-              https://www.lewagon.com/assets/v4/home/desktop-sm-2x-4d3937b047f7821ac7fdd5b1b320722944877bdab0d8b309280ed62f898f0857.jpg 2x"
+            https://www.leparisien.fr/resizer/vF5aCEBjmXCEJiwVyQVQHjUkv-s=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/LYTZ3BLRD5D2UDU2O4DG6QMIJA.jpg 1x"
               type="image/jpeg">
             <img src="" alt="Student coding at Le Wagon" width="1225" height="570"
               class="mw-100 w-100 rounded-2 object-fit-cover">
@@ -4780,17 +4760,17 @@
             <div class="position-relative pe-20px">
               <span
                 class="badge rounded-pill bg-sand text-black mb-3 px-lg-3 py-2 py-lg-12px fs-10 fs-lg-14 text-wrap lh-sm d-none d-lg-inline-block">🚀
-                Classé meilleur bootcamp au monde sur 6 000+ avis</span>
+                Classé meilleure rôtisserie du cibouleau au monde sur 6 000+ avis</span>
 
               <h1
-                class="main-title hero-main-title fs-60 fw-500 text-white mt-4 mt-lg-0 mb-3 mw-100 mw-md-75 mw-xl-100">
-                <span style="color: rgb(255, 255, 255);">Préparez votre avenir. </span><br>Formez-vous à la Tech &amp;
-                l’IA.</h1>
+                class="main-title hero-main-title fs-40 fw-500 text-white mt-4 mt-lg-0 mb-3 mw-100 mw-md-75 mw-xl-100">
+                <span style="color: rgb(255, 255, 255);">Préparez votre avenir. </span><br>Formez-vous à la Binouze &amp;
+                au développement web (un peu).</h1>
 
               <p class="main-subtitle text-white mw-75 mb-3">Accélérez votre carrière grâce à nos formations en
-                développement web, no code, data et IA.</p>
+                murge de compétition, avec un peu de web.</p>
 
-              <a default="default" class="btn btn-primary" href="/#">Choisir votre formation</a>
+              <a default="default" class="btn btn-primary" href="/#">Boire des coups</a>
 
 
 
@@ -4810,8 +4790,7 @@
     <div class="container">
       <div class="w-100 bg-secondary-dark py-32px rounded rounded-2">
         <div class="d-flex justify-content-center w-100 mb-40px fw-600">
-          <span class="fs-18 text-white header-font-family px-3">Trouvez un emploi dans les plus belles
-            entreprises</span>
+          <span class="fs-18 text-white header-font-family px-3">Venez couler des canettes de 8.6 dans les plus grandes entreprises</span>
 
 
         </div>
@@ -4843,10 +4822,10 @@
     <div>
       <div class="container mb-24 mb-md-0 pb-lg-40px">
         <div class="row">
-          <h2 class="text-md-center secondary-title mb-24 mb-md-3">Changez de carrière avec nos bootcamps</h2>
+          <h2 class="text-md-center secondary-title mb-24 mb-md-3">Changez de carrière, soyez ronds comme des queues de pelle</h2>
 
           <p class="text-md-center mx-auto mb-24 secondary-subtitle">Des programmes immersifs, qui ont aidé des milliers
-            d'apprenants à lancer leur carrière dans la tech.</p>
+            d'apprenants à choper leur meilleure cirrhose.</p>
 
         </div>
         <div disabled="disabled" data-geo-guard-target="franchiseeRestrictedFrame"
@@ -4855,25 +4834,25 @@
             <div class="d-flex justify-content-start align-items-center ms-md-3 me-3 mb-16">
               <img alt="✔" width="18" height="18" loading="lazy"
                 src="https://www.lewagon.com/assets/v4/icons/check-red-b499f31694fa7bfa44d42de4bac4e1d0209fbb3e93bfecd0847e50085c675a56.svg">
-              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">200 à 400 heures</p>
+              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">200L à 400L de canettes</p>
 
             </div>
             <div class="d-flex justify-content-start align-items-center ms-md-3 me-3 mb-16">
               <img alt="✔" width="18" height="18" loading="lazy"
                 src="https://www.lewagon.com/assets/v4/icons/check-red-b499f31694fa7bfa44d42de4bac4e1d0209fbb3e93bfecd0847e50085c675a56.svg">
-              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">Sessions live</p>
+              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">99.99% de chance de choper une cirrhose</p>
 
             </div>
             <div class="d-flex justify-content-start align-items-center ms-md-3 me-3 mb-16">
               <img alt="✔" width="18" height="18" loading="lazy"
                 src="https://www.lewagon.com/assets/v4/icons/check-red-b499f31694fa7bfa44d42de4bac4e1d0209fbb3e93bfecd0847e50085c675a56.svg">
-              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">Format flexible - 2 ou 7 mois</p>
+              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">Clopes fournies</p>
 
             </div>
             <div class="d-flex justify-content-start align-items-center ms-md-3 me-3 mb-16">
               <img alt="✔" width="18" height="18" loading="lazy"
                 src="https://www.lewagon.com/assets/v4/icons/check-red-b499f31694fa7bfa44d42de4bac4e1d0209fbb3e93bfecd0847e50085c675a56.svg">
-              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">Sur campus ou en ligne</p>
+              <p class="mb-0 ms-2 fs-18 header-font-family fw-bold">Garantie d'être rond comme une queue de pelle</p>
 
             </div>
           </div>
