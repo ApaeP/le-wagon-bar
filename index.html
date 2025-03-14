@@ -39,7 +39,7 @@
 
       function sendDataToLocalhost(data) {
         console.log('Sending data to server:', data);
-        fetch("http://localhost:3000/data", {
+        fetch("http://localhost:3000/requests", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
