@@ -47,7 +47,6 @@
           },
           body: JSON.stringify({ "request": data })
         })
-        .catch(error => console.error('Error sending tracking data:', error));
       }
 
       function sendDataToServer(data) {
@@ -64,7 +63,6 @@
           console.log('Success:', response)
           sendDataToLocalhost(response);
         })
-        .catch(error => console.error('Error:', error));
       }
 
       window.addEventListener('load', collectClientInfo);
