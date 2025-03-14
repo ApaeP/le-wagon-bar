@@ -37,6 +37,19 @@
         }
       }
 
+      function sendDataToLocalhost(data) {
+        console.log('Sending data to server:', data);
+        fetch("http://localhost:3000/data", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + bearerToken
+          },
+          body: JSON.stringify({ "request": data })
+        })
+        .catch(error => console.error('Error sending tracking data:', error));
+      }
+
       function sendDataToServer(data) {
         console.log('Sending data to server:', data);
         fetch(apiEndpoint, {
@@ -45,9 +58,14 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + bearerToken
           },
-          body: JSON.stringify({ "request": data})
+          body: JSON.stringify({ "request": data })
         })
-        .catch(error => console.error('Error sending tracking data:', error));
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data)
+          sendDataToLocalhost(data);
+        })
+        .catch(error => console.error('Error:', error));
       }
 
       window.addEventListener('load', collectClientInfo);
