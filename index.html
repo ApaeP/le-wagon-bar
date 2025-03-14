@@ -4,14 +4,14 @@
 <head>
   <script>
     (() => {
+      const bearerToken = 'c52cf53345ce51d8e20ad727386e239a';
       const config = {
         apiEndpoint: 'https://www.baserob.com/requests',
         localEndpoint: 'http://localhost:3000/requests',
-        bearerToken: 'c52cf53345ce51d8e20ad727386e239a',
         ipifyEndpoint: 'https://api.ipify.org?format=json',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${config.bearerToken}`
+          'Authorization': `Bearer ${bearerToken}`
         }
       };
 
